@@ -101,7 +101,7 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 
 * Email: [syedomerali2006@gmail.com](mailto:syedomerali2006@gmail.com)
 * GitHub: [github.com/syedomer17](https://github.com/syedomer17)
-* LinkedIn: [linkedin.com/in/syed-omer-ali](https://linkedin.com/in/syed-omer-ali)
+* LinkedIn: [linkedin.com/in/syed-omer-ali](https://www.linkedin.com/in/syed-omer-ali-b73501324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 ---
 

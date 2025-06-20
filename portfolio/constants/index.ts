@@ -1,3 +1,5 @@
+import { FaDiscord, FaFacebook, FaInstagram } from "react-icons/fa";
+
 export const Skill_data = [
     {
       skill_name: "Html 5",
@@ -48,7 +50,7 @@ export const Skill_data = [
       height: 80,
     },
     {
-      skill_name: "Next js 13",
+      skill_name: "Next js 15",
       Image: "/next.png",
       width: 80,
       height: 80,
@@ -80,20 +82,23 @@ export const Skill_data = [
   
   ];
   
-  export const Socials = [
-    {
-      name: "Discord",
-      src: "/instagram.svg",
-    },
-    {
-      name: "Facebook",
-      src: "/facebook.svg",
-    },
-    {
-      name: "Instagram",
-      src: "/discord.svg",
-    },
-  ];
+ export const Socials = [
+  {
+    name: "Discord",
+    Icon: FaDiscord,
+    link: "https://discord.com/invite/your-invite-code",
+  },
+  {
+    name: "Facebook",
+    Icon: FaFacebook,
+    link: "https://www.facebook.com/your-facebook-profile",
+  },
+  {
+    name: "Instagram",
+    Icon: FaInstagram,
+    link: "https://instagram.com/syedomer934",
+  },
+];
   
   
   
@@ -153,7 +158,7 @@ export const Skill_data = [
       height: 80,
     },
     {
-      skill_name: "Next js 13",
+      skill_name: "Next js 15",
       Image: "/next.png",
       width: 80,
       height: 80,

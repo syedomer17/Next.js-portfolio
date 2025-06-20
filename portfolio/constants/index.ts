@@ -1,4 +1,49 @@
-import { FaDiscord, FaFacebook, FaInstagram } from "react-icons/fa";
+// constants.ts
+import { FaCoffee, FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
+import {
+  RxDiscordLogo,
+  RxGithubLogo,
+  RxInstagramLogo,
+  RxTwitterLogo,
+  RxLinkedinLogo,
+} from "react-icons/rx";
+
+export const CommunityLinks = [
+  {
+    name: "Buy Me a Coffee",
+    Icon: FaCoffee,
+    link: "https://www.buymeacoffee.com/SyedOmerAli",
+  },
+  {
+    name: "GitHub",
+    Icon: RxGithubLogo,
+    link: "https://github.com/syedomer17",
+  },
+  {
+    name: "Discord",
+    Icon: RxDiscordLogo,
+    link: "https://discord.com/channels/syedomerali8642",
+  },
+];
+
+export const SocialMediaLinks = [
+  {
+    name: "Instagram",
+    Icon: RxInstagramLogo,
+    link: "https://instagram.com/syedomer934",
+  },
+  {
+    name: "Twitter",
+    Icon: RxTwitterLogo,
+    link: "https://twitter.com/SyedOmerAl20006",
+  },
+  {
+    name: "LinkedIn",
+    Icon: RxLinkedinLogo,
+    link: "https://www.linkedin.com/in/syed-omer-ali-b73501324",
+  },
+];
+
 
 export const Skill_data = [
     {
@@ -84,9 +129,9 @@ export const Skill_data = [
   
  export const Socials = [
   {
-    name: "Discord",
-    Icon: FaDiscord,
-    link: "https://discord.com/invite/your-invite-code",
+    name: "LinkedIn",
+    Icon: FaLinkedin,
+    link: "https://www.linkedin.com/in/syed-omer-ali-b73501324",
   },
   {
     name: "Facebook",

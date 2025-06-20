@@ -1,5 +1,13 @@
+"use client";
+
 import { Socials } from "@/constants";
 import React from "react";
+
+const IconBrandColors: Record<string, string> = {
+  LinkedIn: "#0A66C2",
+  Facebook: "#1877F2",
+  Instagram: "#E4405F",
+};
 
 const Navbar = () => {
   return (
@@ -14,7 +22,7 @@ const Navbar = () => {
             className="cursor-pointer hover:animate-slowspin"
           />
           <span className="font-bold ml-[10px] hidden md:block text-gray-300">
-            Web Dev
+            Syed Omer Ali
           </span>
         </a>
 
@@ -33,17 +41,28 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-row gap-5">
-          {Socials.map(({ name, Icon, link }) => (
-            <a
-              key={name}
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer text-gray-200 hover:text-purple-500"
-            >
-              <Icon size={24} />
-            </a>
-          ))}
+          {Socials.map(({ name, Icon, link }) => {
+            const hoverColor = IconBrandColors[name] || "purple";
+
+            return (
+              <a
+                key={name}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer text-gray-200 transition transform hover:scale-110"
+                style={{ color: "inherit" }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = hoverColor;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "";
+                }}
+              >
+                <Icon size={24} />
+              </a>
+            );
+          })}
         </div>
       </div>
     </div>

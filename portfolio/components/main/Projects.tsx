@@ -10,7 +10,8 @@ const Projects = () => {
       <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
         My Projects
       </h1>
-      <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
+      <div className="h-full w-full flex flex-col md:flex-row flex-wrap gap-10 px-10 justify-center">
+        {/* Existing Cards */}
         <ProjectCard
           src="/NextWebsite.png"
           title="Interactive Website"
@@ -25,6 +26,27 @@ const Projects = () => {
           src="/SpaceWebsite.png"
           title="Modern Next.js Portfolio"
           description="A sleek and responsive portfolio website built with Next.js, showcasing modern web design principles and optimized for performance and SEO."
+        />
+
+        {/* New Card 1 */}
+        <ProjectCard
+          src="/GistSearch.png"
+          title="GitHub Gist Search App"
+          description="A powerful Next.js application that lets users search, view, and manage GitHub Gists with OAuth authentication, dynamic filtering, and a clean user experience."
+        />
+
+        {/* New Card 2 */}
+        <ProjectCard
+          src="/AIFitnessApp.png"
+          title="AI-Powered Fitness Platform"
+          description="An intelligent fitness app built with Next.js that generates personalized workout plans using AI, featuring secure authentication and a modern, responsive design."
+        />
+
+        {/* New Card 3 */}
+        <ProjectCard
+          src="/NginxGenerator.png"
+          title="NGINX Config Generator"
+          description="A handy tool to create custom NGINX server configuration snippets with an intuitive Next.js interface and instant code preview for developers."
         />
       </div>
     </div>

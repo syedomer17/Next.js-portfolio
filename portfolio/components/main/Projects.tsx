@@ -23,9 +23,9 @@ const Projects = () => {
         "
       >
         <ProjectCard
-          src="/NextWebsite.png"
-          title="Interactive Website"
-          description="A visually stunning website inspired by space exploration, utilizing immersive design elements and creative visuals to engage visitors."
+          src="/ExpenseTracker.png"
+          title="Expense Tracker"
+          description="A web application for tracking personal expenses, featuring a user-friendly interface and data visualization."
         />
         <ProjectCard
           src="/CardImage.png"

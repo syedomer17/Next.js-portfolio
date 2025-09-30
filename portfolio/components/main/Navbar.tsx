@@ -4,6 +4,8 @@ import { Socials } from "@/constants";
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
 
 const IconBrandColors: Record<string, string> = {
   LinkedIn: "#0A66C2",
@@ -19,7 +21,7 @@ const Navbar = () => {
       <div className="w-full h-full flex items-center justify-between m-auto">
         {/* Logo */}
         <a href="#about-me" className="flex items-center space-x-2">
-          <img
+          <Image
             src="/NavLogo.png"
             alt="logo"
             width={50}
@@ -33,15 +35,21 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center justify-between border border-[#7042f861] bg-[#0300145e] px-4 py-2 rounded-full text-gray-200 space-x-4">
-          <a href="#about-me" className="cursor-pointer">
-            About me
-          </a>
-          <a href="#skills" className="cursor-pointer">
+          <Link href="/" className="cursor-pointer">
+            Home
+          </Link>
+          <Link href="/about" className="cursor-pointer">
+            About
+          </Link>
+          <Link href="/skills" className="cursor-pointer">
             Skills
-          </a>
-          <a href="#projects" className="cursor-pointer">
+          </Link>
+          <Link href="/projects" className="cursor-pointer">
             Projects
-          </a>
+          </Link>
+          <Link href="/connect" className="cursor-pointer">
+            Connect
+          </Link>
         </div>
 
         {/* Desktop Social Icons */}
@@ -49,7 +57,7 @@ const Navbar = () => {
           {Socials.map(({ name, Icon, link }) => {
             const hoverColor = IconBrandColors[name] || "purple";
             return (
-              <a
+              <Link
                 key={name}
                 href={link}
                 target="_blank"
@@ -64,7 +72,7 @@ const Navbar = () => {
                 }}
               >
                 <Icon size={22} />
-              </a>
+              </Link>
             );
           })}
         </div>
@@ -91,33 +99,47 @@ const Navbar = () => {
             className="md:hidden bg-[#030014ee] backdrop-blur-lg w-full mt-2 py-3 px-4 rounded-lg space-y-3"
           >
             <div className="flex flex-col space-y-2 text-gray-200">
-              <a
-                href="#about-me"
+              <Link
+                href="/"
                 className="cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About me
-              </a>
-              <a
-                href="#skills"
+                Home
+              </Link>
+              <Link
+                href="/about"
+                className="cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                href="/skills"
                 className="cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Skills
-              </a>
-              <a
-                href="#projects"
+              </Link>
+              <Link
+                href="/projects"
                 className="cursor-pointer"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Projects
-              </a>
+              </Link>
+              <Link
+                href="/connect"
+                className="cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Connect
+              </Link>
             </div>
             <div className="flex flex-row gap-4 mt-3">
               {Socials.map(({ name, Icon, link }) => {
                 const hoverColor = IconBrandColors[name] || "purple";
                 return (
-                  <a
+                  <Link
                     key={name}
                     href={link}
                     target="_blank"
@@ -132,7 +154,7 @@ const Navbar = () => {
                     }}
                   >
                     <Icon size={22} />
-                  </a>
+                  </Link>
                 );
               })}
             </div>

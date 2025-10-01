@@ -99,12 +99,6 @@ const Footer = () => {
           <span className="footer-text text-sm font-medium text-gray-300 transition-all duration-300 relative z-10">
             {name}
           </span>
-
-          {/* Animated underline */}
-          <div 
-            className="absolute bottom-0 left-4 right-4 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"
-            style={{ backgroundColor: hoverColor }}
-          />
         </motion.a>
       );
     });
@@ -240,7 +234,7 @@ const Footer = () => {
         <div className="w-full border-t border-gray-700/50 mt-16 pt-8 px-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="text-sm text-gray-400">
-              © 2025 Syed Omer Ali. All rights reserved. ✨
+              © 2025 Syed Omer Ali. All rights reserved.
             </div>
           </div>
         </div>

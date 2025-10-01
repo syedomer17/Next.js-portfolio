@@ -113,12 +113,12 @@ const ContactInfo = () => {
   const availability = [
     {
       day: "Monday - Friday",
-      time: "9:00 AM - 6:00 PM (PKT)",
+      time: "9:00 AM - 6:00 PM (IST)",
       status: "Available"
     },
     {
       day: "Saturday",
-      time: "10:00 AM - 4:00 PM (PKT)",
+      time: "1:00 PM - 4:00 PM (IST)",
       status: "Limited"
     },
     {

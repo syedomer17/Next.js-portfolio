@@ -20,7 +20,7 @@ const Navbar = () => {
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-4 sm:px-6 md:px-10">
       <div className="w-full h-full flex items-center justify-between m-auto">
         {/* Logo */}
-        <a href="#about-me" className="flex items-center space-x-2">
+        <Link href="/about" className="flex items-center space-x-2">
           <Image
             src="/NavLogo.png"
             alt="logo"
@@ -31,7 +31,7 @@ const Navbar = () => {
           <span className="font-bold hidden sm:block text-gray-300 text-sm md:text-base">
             Syed Omer Ali
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center justify-between border border-[#7042f861] bg-[#0300145e] px-4 py-2 rounded-full text-gray-200 space-x-4">

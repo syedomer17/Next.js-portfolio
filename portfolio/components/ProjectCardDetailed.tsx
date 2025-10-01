@@ -76,33 +76,6 @@ const ProjectCardDetailed = ({ project, index }: Props) => {
 
         {/* Action Buttons Overlay */}
         <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-          {project.demoLink && (
-            <motion.a
-              href={project.demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md text-white font-medium rounded-lg border border-white/30 hover:bg-white/30 transition-all duration-200"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FiExternalLink className="w-4 h-4" />
-              <span className="hidden sm:inline">Live Demo</span>
-            </motion.a>
-          )}
-          
-          {project.githubLink && (
-            <motion.a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-black/40 backdrop-blur-md text-white font-medium rounded-lg border border-gray-600/50 hover:bg-black/60 transition-all duration-200"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FiGithub className="w-4 h-4" />
-              <span className="hidden sm:inline">Code</span>
-            </motion.a>
-          )}
         </div>
       </div>
 
@@ -148,29 +121,6 @@ const ProjectCardDetailed = ({ project, index }: Props) => {
 
           {/* Links */}
           <div className="flex items-center gap-3 pt-4 border-t border-gray-700/50">
-            {project.demoLink && (
-              <a
-                href={project.demoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-colors duration-200"
-              >
-                <FiExternalLink className="w-4 h-4" />
-                <span>Live Demo</span>
-              </a>
-            )}
-            
-            {project.githubLink && (
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-gray-400 hover:text-gray-300 transition-colors duration-200"
-              >
-                <FiGithub className="w-4 h-4" />
-                <span>Source Code</span>
-              </a>
-            )}
           </div>
         </div>
       </div>

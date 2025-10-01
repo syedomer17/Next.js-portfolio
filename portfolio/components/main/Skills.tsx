@@ -5,6 +5,7 @@ import {
   Frontend_skill,
   Full_stack,
   Other_skill,
+  Cloud_skill,
   Skill_data,
 } from "@/constants";
 import React from "react";
@@ -29,6 +30,7 @@ const Skills = () => {
         { data: Backend_skill, delay: 0.2 },
         { data: Full_stack, delay: 0.3 },
         { data: Other_skill, delay: 0.4 },
+        { data: Cloud_skill, delay: 0.5 },
       ].map((group, groupIndex) => (
         <motion.div
           key={groupIndex}

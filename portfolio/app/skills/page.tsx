@@ -7,8 +7,10 @@ import {
   Frontend_skill,
   Full_stack,
   Other_skill,
+  Cloud_skill,
 } from "@/constants";
 import SkillCard from "../../components/SkillCard";
+import { useRouter } from "next/navigation"; // ✅ App Router import
 
 const skillCategories = [
   {
@@ -20,7 +22,7 @@ const skillCategories = [
     icon: "🎨",
   },
   {
-    title: "Backend Development", 
+    title: "Backend Development",
     description: "Robust server-side applications and APIs",
     skills: Backend_skill,
     gradient: "from-green-500 to-teal-600",
@@ -31,35 +33,47 @@ const skillCategories = [
     title: "Full-Stack Tools",
     description: "End-to-end development solutions",
     skills: Full_stack,
-    gradient: "from-orange-500 to-red-600", 
+    gradient: "from-orange-500 to-red-600",
     bgGradient: "from-orange-500/10 to-red-600/10",
     icon: "🚀",
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Scalable infrastructure and deployments",
+    skills: Cloud_skill,
+    gradient: "from-sky-500 to-indigo-600",
+    bgGradient: "from-sky-500/10 to-indigo-600/10",
+    icon: "☁️",
   },
   {
     title: "Other Technologies",
     description: "Additional programming languages and tools",
     skills: Other_skill,
     gradient: "from-purple-500 to-pink-600",
-    bgGradient: "from-purple-500/10 to-pink-600/10", 
+    bgGradient: "from-purple-500/10 to-pink-600/10",
     icon: "💡",
   },
 ];
 
 const SkillsPage = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/connect"); // navigate to /connect
+    console.log('Clicked! Navigating to /connect');
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900 py-20 px-4 sm:px-6 lg:px-8">
+    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900 py-20 px-4 sm:px-6 lg:px-8">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-      
-      {/* Floating Background Shapes */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl animate-pulse delay-500" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl animate-pulse delay-500" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-20">
-          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,7 +86,6 @@ const SkillsPage = () => {
             </span>
           </motion.div>
 
-          {/* Main Title */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -82,7 +95,6 @@ const SkillsPage = () => {
             Skills & Technologies
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -92,17 +104,17 @@ const SkillsPage = () => {
             Crafting exceptional digital experiences with cutting-edge technologies
           </motion.p>
 
-          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-gray-400 max-w-2xl mx-auto leading-relaxed"
           >
-            From frontend magic to backend power, I leverage modern tools and frameworks to build scalable, performant, and beautiful applications that make a difference.
+            From frontend magic to backend power, I leverage modern tools and
+            frameworks to build scalable, performant, and beautiful applications
+            that make a difference.
           </motion.p>
 
-          {/* Decorative Line */}
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "100px" }}
@@ -118,10 +130,7 @@ const SkillsPage = () => {
               key={category.title}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.6, 
-                delay: categoryIndex * 0.2 
-              }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
               viewport={{ once: true, margin: "-100px" }}
               className="group"
             >
@@ -130,33 +139,38 @@ const SkillsPage = () => {
                 <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ 
-                    duration: 0.5, 
+                  transition={{
+                    duration: 0.5,
                     delay: categoryIndex * 0.2 + 0.3,
                     type: "spring",
-                    stiffness: 200
+                    stiffness: 200,
                   }}
                   viewport={{ once: true }}
                   className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${category.gradient} mb-6 text-2xl shadow-lg`}
                 >
                   {category.icon}
                 </motion.div>
-                
-                <h3 className={`text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${category.gradient} mb-4`}>
+
+                <h3
+                  className={`text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${category.gradient} mb-4`}
+                >
                   {category.title}
                 </h3>
-                
+
                 <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
                   {category.description}
                 </p>
               </div>
 
               {/* Skills Container */}
-              <div className={`relative p-8 rounded-3xl bg-gradient-to-br ${category.bgGradient} backdrop-blur-sm border border-white/10 shadow-2xl`}>
-                {/* Decorative Elements */}
+              <div
+                className={`relative p-8 rounded-3xl bg-gradient-to-br ${category.bgGradient} backdrop-blur-sm border border-white/10 shadow-2xl`}
+              >
                 <div className="absolute top-4 right-4 w-2 h-2 bg-white/30 rounded-full" />
-                <div className={`absolute bottom-4 left-4 w-1 h-8 bg-gradient-to-t ${category.gradient} rounded-full opacity-60`} />
-                
+                <div
+                  className={`absolute bottom-4 left-4 w-1 h-8 bg-gradient-to-t ${category.gradient} rounded-full opacity-60`}
+                />
+
                 {/* Skills Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 lg:gap-8">
                   {category.skills.map((skill, skillIndex) => (
@@ -166,7 +180,7 @@ const SkillsPage = () => {
                       whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
                       transition={{
                         duration: 0.6,
-                        delay: categoryIndex * 0.2 + skillIndex * 0.1
+                        delay: categoryIndex * 0.2 + skillIndex * 0.1,
                       }}
                       viewport={{ once: true }}
                     >
@@ -179,10 +193,7 @@ const SkillsPage = () => {
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: categoryIndex * 0.2 + 0.8 
-                  }}
+                  transition={{ duration: 0.5, delay: categoryIndex * 0.2 + 0.8 }}
                   viewport={{ once: true }}
                   className={`absolute -top-3 -right-3 bg-gradient-to-r ${category.gradient} text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg`}
                 >
@@ -201,23 +212,28 @@ const SkillsPage = () => {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {[
               { label: "Frontend Skills", count: Frontend_skill.length, icon: "🎨" },
               { label: "Backend Skills", count: Backend_skill.length, icon: "⚙️" },
               { label: "Full-Stack Tools", count: Full_stack.length, icon: "🚀" },
-              { label: "Total Skills", count: Frontend_skill.length + Backend_skill.length + Full_stack.length + Other_skill.length, icon: "💼" },
+              { label: "Cloud & DevOps", count: Cloud_skill.length, icon: "☁️" },
+              {
+                label: "Total Skills",
+                count:
+                  Frontend_skill.length +
+                  Backend_skill.length +
+                  Full_stack.length +
+                  Other_skill.length +
+                  Cloud_skill.length,
+                icon: "💼",
+              },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: index * 0.1,
-                  type: "spring",
-                  stiffness: 200
-                }}
+                transition={{ duration: 0.5, delay: index * 0.1, type: "spring", stiffness: 200 }}
                 viewport={{ once: true }}
                 className="group p-6 rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
               >
@@ -227,9 +243,7 @@ const SkillsPage = () => {
                 <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 mb-2">
                   {stat.count}+
                 </div>
-                <div className="text-gray-300 text-sm font-medium">
-                  {stat.label}
-                </div>
+                <div className="text-gray-300 text-sm font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -246,14 +260,14 @@ const SkillsPage = () => {
           <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
             Ready to bring your ideas to life with cutting-edge technologies?
           </p>
-          <motion.a
-            href="/connect"
+          <motion.button
+            onClick={handleClick}
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <span className="mr-2">🚀</span>
-            Let's Work Together
+            Let&apos;s Work Together
             <motion.span
               className="ml-2"
               animate={{ x: [0, 5, 0] }}
@@ -261,7 +275,7 @@ const SkillsPage = () => {
             >
               →
             </motion.span>
-          </motion.a>
+          </motion.button>
         </motion.div>
       </div>
     </div>

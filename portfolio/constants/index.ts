@@ -230,6 +230,18 @@ export const Skill_data = [
       width: 80,
       height: 80,
     },
+    {
+      skill_name: "ShadCN UI",
+      Image: "/shardcn.png",
+      width: 80,
+      height: 80,
+    },
+    {
+      skill_name: "Chakra UI",
+      Image: "/chakra.png",
+      width: 80,
+      height: 80,
+    },
   ];
   
   export const Backend_skill = [
@@ -281,6 +293,18 @@ export const Skill_data = [
       width: 80,
       height: 80,
     },
+    {
+      skill_name: "Nest js",
+      Image: "/nestjs.png",
+      width: 80,
+      height: 80,
+    },
+    {
+      skill_name: "Fastify",
+      Image: "/fastify.png",
+      width: 80,
+      height: 80,
+    },
   ];
   
   export const Full_stack = [
@@ -293,12 +317,6 @@ export const Skill_data = [
     {
       skill_name: "Tauri",
       Image: "/tauri.svg",
-      width: 70,
-      height: 70,
-    },
-    {
-      skill_name: "Docker",
-      Image: "/docker.webp",
       width: 70,
       height: 70,
     },
@@ -321,6 +339,39 @@ export const Other_skill = [
     width: 60,
     height: 60,
   },
+  {
+    skill_name: "C",
+    Image: "/c.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "Python",
+    Image: "/python.png",
+    width: 80,
+    height: 80,
+  },
+];
+
+export const Cloud_skill = [
+  {
+    skill_name: "AWS",
+    Image: "/aws.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "DigitalOcean",
+    Image: "/digitalocean.png",
+    width: 80,
+    height: 80,
+  },
+  {
+      skill_name: "Docker",
+      Image: "/docker.webp",
+      width: 70,
+      height: 70,
+    },
 ];
 
 // Project Data for the dedicated projects page
@@ -333,8 +384,6 @@ export interface ProjectData {
   technologies: string[];
   category: string;
   status: 'completed' | 'in-progress' | 'concept' | 'Future project';
-  demoLink?: string;
-  githubLink?: string;
   featured: boolean;
   year: number;
 }
@@ -346,13 +395,11 @@ export const ProjectsData: ProjectData[] = [
     description: "A comprehensive web application for tracking personal expenses with data visualization and budget management.",
     longDescription: "A full-stack expense tracking application built with modern web technologies. Features include real-time expense tracking, budget setting, data visualization with charts, category management, and detailed financial reports. The app uses secure authentication and provides insights into spending patterns.",
     image: "/ExpenseTracker.png",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "MongoDB", "Node.js", "Chart.js"],
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "MongoDB", "Node.js", "Shardcn UI"],
     category: "Full Stack",
     status: "completed",
-    demoLink: "https://expense-tracker-demo.vercel.app",
-    githubLink: "https://github.com/syedomer17/expense-tracker",
     featured: true,
-    year: 2024
+    year: 2025
   },
   {
     id: "interactive-cards",
@@ -363,8 +410,6 @@ export const ProjectsData: ProjectData[] = [
     technologies: ["React", "Framer Motion", "CSS3", "TypeScript", "Responsive Design"],
     category: "Frontend",
     status: "completed",
-    demoLink: "https://interactive-cards-demo.vercel.app",
-    githubLink: "https://github.com/syedomer17/interactive-cards",
     featured: true,
     year: 2024
   },
@@ -374,13 +419,11 @@ export const ProjectsData: ProjectData[] = [
     description: "A sleek and responsive portfolio website built with Next.js, showcasing modern web design principles and optimized for performance.",
     longDescription: "A cutting-edge portfolio website built with Next.js 14, featuring a space-themed design with stunning animations. Includes dark mode, responsive design, SEO optimization, and smooth scrolling. Built with performance in mind using the latest web technologies.",
     image: "/SpaceWebsite.png",
-    technologies: ["Next.js 14", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js"],
+    technologies: ["Next.js 15", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js"],
     category: "Full Stack",
     status: "completed",
-    demoLink: "https://space-portfolio-demo.vercel.app",
-    githubLink: "https://github.com/syedomer17/space-portfolio",
     featured: true,
-    year: 2024
+    year: 2025
   },
   {
     id: "gist-search",
@@ -391,10 +434,8 @@ export const ProjectsData: ProjectData[] = [
     technologies: ["Next.js", "React", "GitHub API", "OAuth", "TypeScript", "Tailwind CSS", "Prisma"],
     category: "Full Stack",
     status: "completed",
-    demoLink: "https://gist-search-app.vercel.app",
-    githubLink: "https://github.com/syedomer17/gist-search",
     featured: true,
-    year: 2024
+    year: 2025
   },
   {
     id: "ai-fitness",
@@ -402,11 +443,9 @@ export const ProjectsData: ProjectData[] = [
     description: "An intelligent fitness app built with Next.js that generates personalized workout plans using AI.",
     longDescription: "An innovative fitness platform that leverages AI to create personalized workout plans, track progress, and provide nutrition recommendations. Features include AI-powered workout generation, progress tracking, nutrition planning, and social features for fitness communities.",
     image: "/AIFitnessApp.png",
-    technologies: ["Next.js", "React", "AI/ML", "TypeScript", "Tailwind CSS", "MongoDB", "OpenAI API"],
-    category: "AI/ML",
+    technologies: ["Next.js", "React", "Shardcn UI", "TypeScript", "Tailwind CSS", "MongoDB", "Gemini API"],
+    category: "Full Stack",
     status: "completed",
-    demoLink: "https://ai-fitness-platform.vercel.app",
-    githubLink: "https://github.com/syedomer17/ai-fitness",
     featured: true,
     year: 2024
   },
@@ -419,10 +458,8 @@ export const ProjectsData: ProjectData[] = [
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Monaco Editor", "NGINX"],
     category: "DevTools",
     status: "completed",
-    demoLink: "https://nginx-config-generator.vercel.app",
-    githubLink: "https://github.com/syedomer17/nginx-generator",
     featured: false,
-    year: 2024
+    year: 2025
   },
   {
     id: "food-delivery",
@@ -433,10 +470,8 @@ export const ProjectsData: ProjectData[] = [
     technologies: ["Next.js", "React", "Node.js", "MongoDB", "Stripe", "Socket.io", "Google Maps API"],
     category: "Full Stack",
     status: "Future project",
-    demoLink: "https://food-delivery-demo.vercel.app",
-    githubLink: "https://github.com/syedomer17/food-delivery",
     featured: true,
-    year: 2024
+    year: 2025
   },
   {
     id: "react-social-media",
@@ -447,10 +482,8 @@ export const ProjectsData: ProjectData[] = [
     technologies: ["React", "TypeScript", "Chart.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
     category: "Full Stack",
     status: "Future project",
-    demoLink: "https://social-media-dashboard.vercel.app",
-    githubLink: "https://github.com/syedomer17/social-dashboard",
     featured: false,
-    year: 2023
+    year: 2025
   },
   {
     id: "nike-dashboard",
@@ -461,10 +494,20 @@ export const ProjectsData: ProjectData[] = [
     technologies: ["React", "TypeScript", "Material-UI", "Chart.js", "Node.js", "PostgreSQL"],
     category: "Frontend",
     status: "Future project",
-    demoLink: "https://nike-dashboard-demo.vercel.app",
-    githubLink: "https://github.com/syedomer17/nike-dashboard",
     featured: false,
-    year: 2023
+    year: 2026
+  },
+  {
+    id: 'AI-Powered-Resume App',
+    title: 'AI-Powered Resume Builder',
+    description: 'An AI-driven resume builder that helps users create professional resumes with ease.',
+    longDescription: 'An innovative resume builder that leverages AI to assist users in creating tailored, professional resumes. Features include AI-generated content suggestions, customizable templates, real-time preview, and export options in multiple formats.',
+    image: '/resumeapp.png',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'OpenAI API', 'Node.js'],
+    category: 'AI/ML',
+    status: 'completed',
+    featured: false,
+    year: 2025
   },
   {
     id: "blockchain-explorer",
@@ -475,9 +518,8 @@ export const ProjectsData: ProjectData[] = [
     technologies: ["Next.js", "React", "Web3.js", "TypeScript", "Tailwind CSS", "Blockchain APIs"],
     category: "Blockchain",
     status: "Future project",
-    githubLink: "https://github.com/syedomer17/blockchain-explorer",
     featured: false,
-    year: 2024
+    year: 2026
   }
 ];
 
@@ -493,6 +535,3 @@ export const ProjectCategories = [
 
 // Featured projects for homepage
 export const FeaturedProjects = ProjectsData.filter(project => project.featured);  
-  
-  
-  

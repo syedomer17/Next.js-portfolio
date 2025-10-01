@@ -142,18 +142,18 @@ const ContactInfo = () => {
             target={method.link.startsWith('http') ? '_blank' : '_self'}
             rel={method.link.startsWith('http') ? 'noopener noreferrer' : ''}
             variants={slideInFromRight(0.4 + index * 0.1)}
-            className="group block p-6 bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm border border-slate-700/50 rounded-xl hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-[1.02] shadow-xl"
+            className="group block p-6 bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-md border border-slate-600/70 rounded-xl hover:border-purple-400/70 transition-all duration-300 hover:transform hover:scale-[1.02] shadow-xl"
           >
             <div className="flex items-center gap-4">
               <div className={`p-3 bg-gradient-to-r ${method.color} rounded-lg text-white group-hover:scale-110 transition-transform duration-300`}>
                 {method.icon}
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-white group-hover:text-purple-300 transition-colors">
+                <h3 className="text-lg font-semibold text-white group-hover:text-purple-300 transition-colors drop-shadow-sm">
                   {method.title}
                 </h3>
-                <p className="text-sm text-gray-400 mb-1">{method.subtitle}</p>
-                <p className="text-gray-300 font-medium">{method.value}</p>
+                <p className="text-sm text-gray-200 mb-1 drop-shadow-sm">{method.subtitle}</p>
+                <p className="text-white font-medium drop-shadow-sm">{method.value}</p>
               </div>
               <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -170,7 +170,7 @@ const ContactInfo = () => {
         variants={slideInFromRight(0.8)}
         className="space-y-6"
       >
-        <h3 className="text-2xl font-bold text-white">Connect on Social</h3>
+        <h3 className="text-2xl font-bold text-white drop-shadow-lg">Connect on Social</h3>
         <div className="grid grid-cols-3 gap-4">
           {socialLinks.map((social, index) => (
             <motion.a
@@ -179,7 +179,7 @@ const ContactInfo = () => {
               target="_blank"
               rel="noopener noreferrer"
               variants={slideInFromRight(0.9 + index * 0.1)}
-              className={`group p-4 bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl hover:border-purple-400/50 transition-all duration-300 hover:transform hover:scale-105 text-gray-400 ${social.color} text-center`}
+              className={`group p-4 bg-slate-900/70 backdrop-blur-md border border-slate-600/70 rounded-xl hover:border-purple-400/70 transition-all duration-300 hover:transform hover:scale-105 text-gray-200 ${social.color} text-center shadow-lg`}
             >
               <div className="flex flex-col items-center space-y-2">
                 <div className="group-hover:scale-110 transition-transform duration-300">
@@ -197,14 +197,14 @@ const ContactInfo = () => {
         variants={slideInFromRight(1.2)}
         className="space-y-6"
       >
-        <h3 className="text-2xl font-bold text-white">Availability</h3>
-        <div className="p-6 bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm border border-slate-700/50 rounded-xl">
+        <h3 className="text-2xl font-bold text-white drop-shadow-lg">Availability</h3>
+        <div className="p-6 bg-gradient-to-br from-slate-900/80 to-slate-800/80 backdrop-blur-md border border-slate-600/70 rounded-xl shadow-lg">
           <div className="space-y-4">
             {availability.map((item, index) => (
-              <div key={index} className="flex items-center justify-between py-2 border-b border-slate-700/30 last:border-b-0">
+              <div key={index} className="flex items-center justify-between py-2 border-b border-slate-600/50 last:border-b-0">
                 <div>
-                  <p className="text-white font-medium">{item.day}</p>
-                  <p className="text-sm text-gray-400">{item.time}</p>
+                  <p className="text-white font-medium drop-shadow-sm">{item.day}</p>
+                  <p className="text-sm text-gray-200 drop-shadow-sm">{item.time}</p>
                 </div>
                 <span className={`px-3 py-1 text-xs font-medium rounded-full ${
                   item.status === 'Available' 

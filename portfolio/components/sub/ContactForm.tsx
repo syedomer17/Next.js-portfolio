@@ -78,7 +78,7 @@ const ContactForm = () => {
             variants={slideInFromLeft(0.4)}
             className="space-y-2"
           >
-            <label htmlFor="name" className="block text-sm font-medium text-gray-300">
+            <label htmlFor="name" className="block text-sm font-semibold text-white drop-shadow-sm">
               Full Name *
             </label>
             <input
@@ -88,7 +88,7 @@ const ContactForm = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm hover:border-purple-400/50"
+              className="w-full px-4 py-3 bg-slate-900/90 border border-slate-600/70 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 backdrop-blur-md hover:border-purple-400/70 shadow-lg"
               placeholder="John Doe"
             />
           </motion.div>
@@ -97,7 +97,7 @@ const ContactForm = () => {
             variants={slideInFromLeft(0.5)}
             className="space-y-2"
           >
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+            <label htmlFor="email" className="block text-sm font-semibold text-white drop-shadow-sm">
               Email Address *
             </label>
             <input
@@ -107,7 +107,7 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm hover:border-purple-400/50"
+              className="w-full px-4 py-3 bg-slate-900/90 border border-slate-600/70 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 backdrop-blur-md hover:border-purple-400/70 shadow-lg"
               placeholder="john@example.com"
             />
           </motion.div>
@@ -118,7 +118,7 @@ const ContactForm = () => {
           variants={slideInFromLeft(0.6)}
           className="space-y-2"
         >
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-300">
+          <label htmlFor="subject" className="block text-sm font-semibold text-white drop-shadow-sm">
             Project Type *
           </label>
           <select
@@ -127,7 +127,7 @@ const ContactForm = () => {
             value={formData.subject}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm hover:border-purple-400/50"
+            className="w-full px-4 py-3 bg-slate-900/90 border border-slate-600/70 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 backdrop-blur-md hover:border-purple-400/70 shadow-lg"
           >
             {projectTypes.map((type) => (
               <option key={type.value} value={type.value} className="bg-slate-800">
@@ -142,7 +142,7 @@ const ContactForm = () => {
           variants={slideInFromLeft(0.7)}
           className="space-y-2"
         >
-          <label htmlFor="message" className="block text-sm font-medium text-gray-300">
+          <label htmlFor="message" className="block text-sm font-semibold text-white drop-shadow-sm">
             Project Details *
           </label>
           <textarea
@@ -152,7 +152,7 @@ const ContactForm = () => {
             onChange={handleChange}
             required
             rows={6}
-            className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 backdrop-blur-sm hover:border-purple-400/50 resize-none"
+            className="w-full px-4 py-3 bg-slate-900/90 border border-slate-600/70 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 backdrop-blur-md hover:border-purple-400/70 resize-none shadow-lg"
             placeholder="Tell me about your project, timeline, budget, and any specific requirements..."
           />
         </motion.div>

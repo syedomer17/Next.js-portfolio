@@ -90,13 +90,13 @@ const Connect = () => {
               className="space-y-8"
             >
               <div className="space-y-4">
-                <h2 className="text-3xl lg:text-4xl font-bold text-white">
+                <h2 className="text-3xl lg:text-4xl font-bold text-white drop-shadow-lg">
                   Get in{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400 drop-shadow-lg">
                     touch
                   </span>
                 </h2>
-                <p className="text-lg text-gray-300 leading-relaxed">
+                <p className="text-lg text-white leading-relaxed drop-shadow-sm">
                   Prefer a more direct approach? Reach out through any of these channels.
                 </p>
               </div>

@@ -14,6 +14,23 @@ import SkillText from "../sub/SkillText";
 import { motion } from "framer-motion";
 
 const Skills = () => {
+  // Combine all skills and reorganize into custom rows
+  const allSkills = [
+    ...Frontend_skill,
+    ...Backend_skill,
+    ...Full_stack,
+    ...Cloud_skill,
+    ...Other_skill
+  ];
+
+  // Define custom row configurations
+  const skillRows = [
+    { skills: allSkills.slice(0, 12), delay: 0 }, // First row - 12 skills
+    { skills: allSkills.slice(12, 22), delay: 0.1 }, // Second row - 10 skills
+    { skills: allSkills.slice(22, 29), delay: 0.2 }, // Third row - 7 skills
+    { skills: allSkills.slice(29, 33), delay: 0.3 }, // Fourth row - 4 skills
+  ];
+
   return (
     <section
       id="skills"
@@ -23,24 +40,17 @@ const Skills = () => {
       {/* Title */}
       <SkillText />
 
-      {/* Skill Groups */}
-      {[
-        { data: Skill_data, delay: 0 },
-        { data: Frontend_skill, delay: 0.1 },
-        { data: Backend_skill, delay: 0.2 },
-        { data: Full_stack, delay: 0.3 },
-        { data: Other_skill, delay: 0.4 },
-        { data: Cloud_skill, delay: 0.5 },
-      ].map((group, groupIndex) => (
+      {/* Skill Rows */}
+      {skillRows.map((row, rowIndex) => (
         <motion.div
-          key={groupIndex}
+          key={rowIndex}
           className="flex flex-wrap justify-center gap-6 mt-4 w-full px-4"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: group.delay }}
+          transition={{ duration: 0.5, delay: row.delay }}
           viewport={{ once: true }}
         >
-          {group.data.map((image, index) => (
+          {row.skills.map((image, index) => (
             <SkillDataProvider
               key={index}
               src={image.Image}

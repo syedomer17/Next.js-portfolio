@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
@@ -91,7 +89,7 @@ const About = () => {
             </motion.a>
             
             <motion.a
-              href="#contact"
+              href="/connect"
               className="group px-8 py-4 border-2 border-slate-600 text-gray-300 font-semibold rounded-xl transition-all duration-300 hover:border-purple-400 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 text-center backdrop-blur-sm"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

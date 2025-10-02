@@ -16,6 +16,11 @@ const IconBrandColors: Record<string, string> = {
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Filter to only show LinkedIn, Facebook, and Instagram
+  const filteredSocials = Socials.filter(social => 
+    ['LinkedIn', 'Facebook', 'Instagram'].includes(social.name)
+  );
+
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-4 sm:px-6 md:px-10">
       <div className="w-full h-full flex items-center justify-between m-auto">
@@ -54,24 +59,35 @@ const Navbar = () => {
 
         {/* Desktop Social Icons */}
         <div className="hidden md:flex flex-row gap-4">
-          {Socials.map(({ name, Icon, link }) => {
-            const hoverColor = IconBrandColors[name] || "purple";
+          {filteredSocials.map(({ name, Icon, link }) => {
+            const hoverColor = IconBrandColors[name] || "#7042f8";
             return (
               <Link
                 key={name}
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer text-gray-200 transition transform hover:scale-110"
-                style={{ color: "inherit" }}
+                className="p-2 rounded-full bg-[#0300145e] border border-[#7042f861] text-gray-200 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                style={{ 
+                  transition: 'all 0.3s ease',
+                  minWidth: '40px',
+                  minHeight: '40px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = hoverColor;
+                  e.currentTarget.style.backgroundColor = hoverColor;
+                  e.currentTarget.style.borderColor = hoverColor;
+                  e.currentTarget.style.color = 'white';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = "";
+                  e.currentTarget.style.backgroundColor = '';
+                  e.currentTarget.style.borderColor = '';
+                  e.currentTarget.style.color = '';
                 }}
               >
-                <Icon size={22} />
+                <Icon size={20} />
               </Link>
             );
           })}
@@ -135,25 +151,36 @@ const Navbar = () => {
                 Connect
               </Link>
             </div>
-            <div className="flex flex-row gap-4 mt-3">
-              {Socials.map(({ name, Icon, link }) => {
-                const hoverColor = IconBrandColors[name] || "purple";
+            <div className="flex flex-row gap-3 mt-3 justify-center">
+              {filteredSocials.map(({ name, Icon, link }) => {
+                const hoverColor = IconBrandColors[name] || "#7042f8";
                 return (
                   <Link
                     key={name}
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="cursor-pointer text-gray-200 transition transform hover:scale-110"
-                    style={{ color: "inherit" }}
+                    className="p-2 rounded-full bg-[#0300145e] border border-[#7042f861] text-gray-200 hover:text-white transition-all duration-300 transform hover:scale-110"
+                    style={{ 
+                      transition: 'all 0.3s ease',
+                      minWidth: '40px',
+                      minHeight: '40px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = hoverColor;
+                      e.currentTarget.style.backgroundColor = hoverColor;
+                      e.currentTarget.style.borderColor = hoverColor;
+                      e.currentTarget.style.color = 'white';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "";
+                      e.currentTarget.style.backgroundColor = '';
+                      e.currentTarget.style.borderColor = '';
+                      e.currentTarget.style.color = '';
                     }}
                   >
-                    <Icon size={22} />
+                    <Icon size={20} />
                   </Link>
                 );
               })}
